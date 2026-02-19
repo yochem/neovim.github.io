@@ -98,10 +98,10 @@
       {{ $n = add $n (add 1 (len .subheadings)) }}
       {{ end }}
       {{ range .Params.headings }}
-      <div class="help-toc-h1"><a href="#{{ .tag }}">{{ .name }}</a>
+      <div class="help-toc-h1"><a href="#{{ .tag }}">{{ lower .name | title }}</a>
         {{ if or (lt $n 30) (lt (len $.Params.headings) 10) }}
         {{ range .subheadings }}
-        <div class="help-toc-h2"><a href="#{{ .tag }}">{{ .name }}</a></div>
+        <div class="help-toc-h2"><a href="#{{ .tag }}">{{ lower .name | title }}</a></div>
         {{- end }}
         {{- end }}
       </div>

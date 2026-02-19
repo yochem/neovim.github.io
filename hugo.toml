@@ -2,6 +2,9 @@ baseURL = 'https://neovim.io/'
 languageCode = 'en-us'
 title = 'Neovim'
 
+[uglyURLs]
+  doc = true
+
 [frontmatter]
   date = [":filename", ":default"]
 

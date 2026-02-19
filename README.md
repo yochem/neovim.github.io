@@ -19,7 +19,8 @@ just do the following:
    ```
 2. Build and view the website locally:
    ```
-   hugo server --buildDrafts
+   make userdoc
+   hugo serve -D
    ```
 3. Open http://localhost:1313/ to view the website.
 
@@ -27,11 +28,6 @@ just do the following:
 
 Notes:
 
-- Updating `content/doc2/` currently requires a human to run: `./sync_docs.sh`
-- Files in `content/doc2/` are synced to https://github.com/neovim/doc/ by
-  [this CI job](https://github.com/neovim/doc/blob/4ab2e06af98dadbd35c4282c1b18304d87f8eb59/ci/doc-index.sh#L10-L13).
-    - This is because `neovim.io/doc/` is served by https://github.com/neovim/doc/
-      (where the user documentation HTML is published).
 - Site search (for `:help` docs) is served by [Algolia Docsearch](https://docsearch.algolia.com/).
     - The javascript and UI container were setup in [this commit](https://github.com/neovim/neovim.github.io/commit/ce9aef12eb1c98135965e3a9c5c792bf9e506a76).
     - The docs pages don't use the layout so they also need to [manually include](https://github.com/neovim/neovim/pull/23839) the javascript and define a UI container.
