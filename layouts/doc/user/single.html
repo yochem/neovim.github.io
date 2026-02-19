@@ -102,17 +102,17 @@
         {{ if or (lt $n 30) (lt (len $.Params.headings) 10) }}
         {{ range .subheadings }}
         <div class="help-toc-h2"><a href="#{{ .tag }}">{{ .name }}</a></div>
-        {{ end }}
-        {{ end }}
+        {{- end }}
+        {{- end }}
       </div>
-      {{ end }}
+      {{- end }}
     </div>
   </div>
   <footer>
     <div class="container flex">
       <div class="generator-stats">
         Generated at {{ now.Format "2006-01-02 15:04" }} from <code><a
-            href="https://github.com/neovim/neovim/commit/{{ .Params.commit }}">{{ .Params.commitShort }}</a></code>
+            href="https://github.com/neovim/neovim/commit/{{ .Params.commit }}">{{ substr .Params.commit 0 7 }}</a></code>
       </div>
       <div class="generator-stats">
         parse_errors: {{ .Params.parseErrors }} (<a href="{{ .Params.bugUrl }}" target="_blank">report docs bug...</a>)
