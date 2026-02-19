@@ -13,7 +13,7 @@
 
   <link href="/css/bootstrap.min.css" rel="stylesheet">
   <link href="/css/main.css" rel="stylesheet">
-  <link href="help.css" rel="stylesheet">
+  <link href="/css/help.css" rel="stylesheet">
   <link href="/highlight/styles/neovim.min.css" rel="stylesheet">
 
   <script src="/highlight/highlight.min.js"></script>
@@ -73,13 +73,13 @@
 
   <div class="container golden-grid help-body">
     <div class="col-wide">
-        <a name="{{ .Params.firstTag1 }}" href="#{{ .Params.firstTag2 }}">
-          <h1 id="{{ .Params.firstTag2 }}">{{ .Title }}</h1>
+      <a name="{{ .Params.firstTag1 }}" href="#{{ .Params.firstTag2 }}">
+        <h1 id="{{ .Params.firstTag2 }}">{{ .Title }}</h1>
       </a>
       <p>
         <i>
           Nvim <code>:help</code> pages, <a
-          href="https://github.com/neovim/neovim/blob/master/src/gen/gen_help_html.lua">generated</a>
+            href="https://github.com/neovim/neovim/blob/master/src/gen/gen_help_html.lua">generated</a>
           from <a href="https://github.com/neovim/neovim/blob/master/runtime/doc/{{ .Params.basename }}">source</a>
           using the <a href="https://github.com/neovim/tree-sitter-vimdoc">tree-sitter-vimdoc</a> parser.
         </i>
@@ -87,14 +87,36 @@
       <hr />
       {{ .Content }}
     </div>
+
+    <div class="col-narrow toc">
+      <div><a href="index.html">Main</a></div>
+      <div><a href="vimindex.html">Commands index</a></div>
+      <div><a href="quickref.html">Quick reference</a></div>
+      <hr />
+      {{ $n := 0 }}
+      {{ range .Params.headings }}
+      {{ $n = add $n (add 1 (len .subheadings)) }}
+      {{ end }}
+      {{ range .Params.headings }}
+      <div class="help-toc-h1"><a href="#{{ .tag }}">{{ .name }}</a>
+        {{ if or (lt $n 30) (lt (len $.Params.headings) 10) }}
+        {{ range .subheadings }}
+        <div class="help-toc-h2"><a href="#{{ .tag }}">{{ .name }}</a></div>
+        {{ end }}
+        {{ end }}
+      </div>
+      {{ end }}
+    </div>
   </div>
   <footer>
     <div class="container flex">
       <div class="generator-stats">
-      Generated at {{ now.Format "2006-01-02 15:04" }} from <code><a href="https://github.com/neovim/neovim/commit/{{ .Params.commit }}">{{ .Params.commitShort }}</a></code>
+        Generated at {{ now.Format "2006-01-02 15:04" }} from <code><a
+            href="https://github.com/neovim/neovim/commit/{{ .Params.commit }}">{{ .Params.commitShort }}</a></code>
       </div>
       <div class="generator-stats">
-          parse_errors: {{ .Params.parseErrors }} (<a href="{{ .Params.bugUrl }}" target="_blank">report docs bug...</a>) | <span title="{{ .Params.noiseLines }}">noise_lines: {{ .Params.noiseLinesCount }}</span>
+        parse_errors: {{ .Params.parseErrors }} (<a href="{{ .Params.bugUrl }}" target="_blank">report docs bug...</a>)
+        | <span title="{{ .Params.noiseLines }}">noise_lines: {{ .Params.noiseLinesCount }}</span>
       </div>
       <div>
         <!-- algolia docsearch https://docsearch.algolia.com/docs/docsearch-v3/ -->
