@@ -1,7 +1,7 @@
 ---
 title: About
 active: About
-type: page
+layout: mainpage
 ---
 
 - [Charter](/charter/)
