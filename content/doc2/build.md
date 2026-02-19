@@ -1,6 +1,6 @@
 ---
 title: 'Build'
-type: page
+layout: mainpage
 ---
 - **IMPORTANT**: Before upgrading to a new version, **always check for [breaking changes](https://neovim.io/doc/user/news.html#news-breaking).**
 

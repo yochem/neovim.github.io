@@ -1,7 +1,7 @@
 ---
 title: Vision
 active: About
-type: page
+layout: mainpage
 ---
 
 Neovim is a refactor, and sometimes redactor, in the tradition of Vim (which

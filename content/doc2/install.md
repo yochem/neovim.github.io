@@ -1,6 +1,6 @@
 ---
 title: 'Install'
-type: page
+layout: mainpage
 ---
 You can install Neovim from [download](#install-from-download), [package](#install-from-package), or [source](#install-from-source) in just a few seconds.
 
