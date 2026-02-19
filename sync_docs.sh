@@ -10,29 +10,13 @@
 
 set -eu
 
-# Add Hugo markdown header.
-add_frontmatter() {
-  local file="$1"
-  local title="$2"
-
-  cat > "$file.tmp" <<EOF
----
-title: $title
-type: page
----
-
-EOF
-  cat "$file" >> "$file.tmp"
-  mv "$file.tmp" "$file"
-}
-
-curl -Lo content/doc2/build.md https://raw.githubusercontent.com/neovim/neovim/refs/heads/master/BUILD.md
-add_frontmatter content/doc2/build.md "Build"
+hugo new content --force content/doc2/build.md
+curl -sSL https://raw.githubusercontent.com/neovim/neovim/refs/heads/master/BUILD.md >> content/doc2/build.md
 # Replace INSTALL.md hyperlinks with "./install".
 sed -i '' 's/INSTALL\.md/\.\.\/install\//g' content/doc2/build.md
 
-curl -Lo content/doc2/install.md https://raw.githubusercontent.com/neovim/neovim/refs/heads/master/INSTALL.md
-add_frontmatter content/doc2/install.md "Install"
+hugo new content --force content/doc2/install.md
+curl -sSL https://raw.githubusercontent.com/neovim/neovim/refs/heads/master/INSTALL.md >> content/doc2/install.md
 # Replace BUILD.md hyperlinks with "./build".
 sed -i '' 's/BUILD\.md/\.\.\/build\//g' content/doc2/install.md
 
