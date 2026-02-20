@@ -1,6 +1,5 @@
 ---
 title: whatisnvim
-headless: true
 ---
 
 ### What is Neovim?
