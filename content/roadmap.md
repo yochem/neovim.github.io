@@ -1,7 +1,7 @@
 ---
 title: Roadmap
 active: About
-type: page
+layout: mainpage
 ---
 
 The roadmap is an overview of the project direction. Detailed plans and priorities are tracked in [milestones](https://github.com/neovim/neovim/milestones?direction=desc&sort=due_date&state=open) (these are tentative and may be changed or dropped at any time):

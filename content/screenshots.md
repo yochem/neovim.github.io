@@ -1,7 +1,7 @@
 ---
 title: Screenshots
 active: Screenshots
-type: page
+layout: mainpage
 ---
 
 These screenshots demo what's possible. They may use unreleased features,
