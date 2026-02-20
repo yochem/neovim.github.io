@@ -7,8 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="{{ .Site.Params.description }}">
     <meta property="og:description" content="Hyperextensible Vim-based text editor">
-    <meta property="og:image"
-        content="https://raw.githubusercontent.com/neovim/neovim.github.io/master/logos/neovim-logo-social-preview.png">
+    <meta property="og:image" content="https://raw.githubusercontent.com/neovim/neovim.github.io/master/logos/neovim-logo-social-preview.png">
     <meta property="og:image:alt" content="Robot Marvim pointing at Neovim logo">
     <meta property="og:site_name" content="Neovim">
     <meta property="og:title" content="Neovim">
@@ -20,12 +19,21 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
     <link rel="preconnect" href="https://X185E15FPG-dsn.algolia.net" crossorigin />
 
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    {{ with resources.Get "css/bootstrap.min.css" | resources.Fingerprint -}}
+    <link href="{{ .Permalink }}" rel="stylesheet" integrity="{{ .Data.Integrity }}">
+    {{- end }}
 
-    <link href="/css/main.css" rel="stylesheet">
+    {{ with resources.Get "css/main.css" | resources.Minify | resources.Fingerprint -}}
+    <link href="{{ .Permalink }}" rel="stylesheet" integrity="{{ .Data.Integrity }}">
+    {{- end }}
+
     <!-- Hugo-generated palette for highlighting markdown code blocks. -->
     <!-- <link href="/css/syntax.css" rel="stylesheet"> -->
-    <link href="/css/neovim-hi.css" rel="stylesheet">
+
+    {{ with resources.Get "/css/neovim-hi.css" | resources.Minify | resources.Fingerprint -}}
+    <link href="{{ .Permalink }}" rel="stylesheet" integrity="{{ .Data.Integrity }}">
+    {{- end }}
+
     {{ if eq .RelPermalink "/404.html" }}
     <meta name="robots" content="noindex">
     {{ else }}
@@ -42,7 +50,10 @@
 
     {{ partial "footer.html" . }}
 
-    <script src="/js/bootstrap.bundle.min.js"></script>
+    {{ with resources.Get "/js/bootstrap.bundle.min.js" | resources.Fingerprint -}}
+    <script src="{{ .Permalink }}" integrity="{{ .Data.Integrity }}"></script>
+    {{- end }}
+
 
     <!-- algolia docsearch https://docsearch.algolia.com/docs/docsearch-v3/ -->
     <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
