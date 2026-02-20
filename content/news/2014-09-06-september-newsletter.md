@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #3 - Better Late than Never"
 category: newsletter
-permalink: /news/2014/sept/
+date: 2014-09-06
 ---
 
 Welcome to the third (and delayed) newsletter for Neovim, the project that aims

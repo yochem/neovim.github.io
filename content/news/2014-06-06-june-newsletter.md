@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #1 - A New Hope"
 category: newsletter
-permalink: /news/2014/06/
+date: 2014-06-06
 ---
 
 Welcome to the first newsletter for Neovim, a project that hopes to give a new

@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #5 - Out of the Box"
 category: newsletter
-permalink: /news/2015/april/
+date: 2015-04-03
 ---
 
 > Outstanding communication and handling of bugs from Neovim. Exemplary FOSS

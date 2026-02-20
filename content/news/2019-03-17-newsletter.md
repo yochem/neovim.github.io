@@ -1,7 +1,7 @@
 ---
 title: "Google Summer of Code 2019"
+date: 2019-03-17
 category: newsletter
-permalink: /news/gsoc-2019
 ---
 
 Neovim was again accepted into the Google Summer of Code program.

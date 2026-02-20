@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #7 - Summer of Road"
+date: 2016-11-01
 category: newsletter
-permalink: /news/2016/11/
 ---
 
 It's time for the Neovim newsletter! Skip to the [Fun](#fun-without-smile) and

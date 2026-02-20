@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #6 - Ship it!"
+date: 2015-12-09
 category: newsletter
-permalink: /news/2015/december/
 ---
 
 Welcome to the sixth newsletter for Neovim, a project that aims to improve Vim
