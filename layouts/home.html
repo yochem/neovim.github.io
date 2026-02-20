@@ -53,7 +53,7 @@
                 <h2 id="news">News</h2>
                 {{/* <dl class="nvim-posts"> */}}
                     <table>
-                        {{ range first 2 .Site.RegularPages }}
+                        {{ range first 2 site.RegularPages }}
                         <tr>
                             <td><a href="{{ .RelPermalink }}">{{ .Title }}</a>&nbsp;&nbsp; </td>
                             <td style="white-space: nowrap; text-align: right">{{ .Date.Format "2006.01" }}</td>
