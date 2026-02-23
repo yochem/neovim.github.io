@@ -28,7 +28,7 @@ params:
     - question: Will Neovim deprecate Vimscript?
       answer: |
         No. Lua is built-in, but Vimscript is supported with the
-        [world's most advanced Vimscript engine](/doc/user/api.html#nvim_parse_expression()).
+        [world's most advanced Vimscript engine](/doc/user/api/#nvim_parse_expression()).
     - question: Which plugins does Neovim support?
       answer: |
         Vim 8.x plugins and
@@ -39,15 +39,15 @@ params:
 
 ### Extensible
 
-- API is first-class: [discoverable](/doc/user/api.html#api-mapping),
-  [versioned](/doc/user/api.html#api-contract),
-  [documented](/doc/user/api.html#api-global).
+- API is first-class: [discoverable](/doc/user/api/#api-mapping),
+  [versioned](/doc/user/api/#api-contract),
+  [documented](/doc/user/api/#api-global).
 - [MessagePack](http://msgpack.org/) structured communication enables
   extensions in any language.
 - Remote plugins run as co-processes, safely and asynchronously.
 - GUIs, IDEs, web browsers can `--embed` Neovim as an editor or script
   host.
-- [Lua plugins](/doc/user/lua.html) are easy to create just like
+- [Lua plugins](/doc/user/lua/) are easy to create just like
   Vimscript plugins. Your config can live in `init.lua`!
 - AST-producing [parsing engine](https://tree-sitter.github.io/) enables
   faster, more accurate syntax highlighting, code navigation,
@@ -55,12 +55,12 @@ params:
 
 ### Usable
 
-- Strong [defaults](/doc/user/vim_diff.html#nvim-defaults) including a
+- Strong [defaults](/doc/user/vim_diff/#nvim-defaults) including a
   unique, minimalist colorscheme.
-- Builtin [LSP client](/doc/user/lsp.html) for semantic code inspection
+- Builtin [LSP client](/doc/user/lsp/) for semantic code inspection
   and refactoring (go-to definition, "find references", format, ...).
 - Client-server architecture allows you to
-  [:detach](/doc/user/gui.html#%3Adetach) the UI and keep the editor
+  [:detach](/doc/user/gui/#%3Adetach) the UI and keep the editor
   session running (like tmux). Attach multiple UIs to any Nvim session.
 - No "Press ENTER" messages (Nvim 0.12 feature).
 - Works the same everywhere: one build-type, one command.
@@ -72,5 +72,5 @@ params:
 ### Drop-in Vim
 
 - Fully compatible with Vim's editing model and Vimscript v1.
-- Start with [`:help nvim-from-vim`](/doc/user/nvim.html#nvim-from-vim)
+- Start with [`:help nvim-from-vim`](/doc/user/nvim/#nvim-from-vim)
   if you already use Vim. If not, try `:Tutor`.

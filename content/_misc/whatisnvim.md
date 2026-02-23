@@ -7,7 +7,7 @@ headless: true
 
 Neovim is a Vim-based text editor engineered for
 [extensibility](https://github.com/neovim/neovim/wiki/Related-projects#api-clients)
-and [usability](https://neovim.io/doc/user/vim_diff.html#nvim-features),
+and [usability](/doc/user/vim_diff/#nvim-features),
 to encourage new applications and
 [contributions](https://github.com/neovim/neovim/blob/master/CONTRIBUTING.md#getting-started).
 

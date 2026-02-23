@@ -1,4 +1,4 @@
 ---
 title: '{{ replace .File.ContentBaseName "-" " " | title }}'
-type: page
+layout: mainpage
 ---
