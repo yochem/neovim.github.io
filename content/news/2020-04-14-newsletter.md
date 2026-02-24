@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #9 - Three's company"
+date: 2020-04-14
 category: newsletter
-permalink: /news/2020/04/
 ---
 
 What is Neovim?

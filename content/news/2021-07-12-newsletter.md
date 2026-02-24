@@ -1,7 +1,7 @@
 ---
 title: "Neovim News #11 - The Christmas Issue"
+date: 2021-07-12
 category: newsletter
-permalink: /news/2021/07
 ---
 
 > The _real_ 0.5 was the friends we made along the way
