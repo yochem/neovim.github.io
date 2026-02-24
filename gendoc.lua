@@ -79,9 +79,17 @@ local function main()
   local docdir = joinpath(srcdir, 'runtime/doc')
   local usercontent = 'content/doc/user'
 
+  vim.cmd(('helptags ++t %s'):format(docdir))
   -- Generate html pages from the Vimdoc files
   local genhelp = dofile(joinpath(nvim_repo, 'src/gen/gen_help_html.lua'))
-  genhelp.gen(docdir, usercontent, nil, commit_hash(srcdir))
+  local res = genhelp.gen(docdir, usercontent, nil, commit_hash(srcdir))
+
+  if res.err_count > 0 or #res.invalid_links > 0 then
+    error(('Error generating pages: err_count: %d, #invalid_links: %d'):format(
+      res.err_count,
+      res.invalid_links
+    ))
+  end
 
   local out_install = 'content/doc/install.md'
   sys({ 'hugo', 'new', 'content', '--force', out_install })
