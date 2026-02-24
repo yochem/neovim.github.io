@@ -95,16 +95,16 @@ local function main()
   sys({ 'hugo', 'new', 'content', '--force', out_install })
   vim.fn.writefile(vim.fn.readfile(joinpath(srcdir, 'INSTALL.md')), out_install, 'a')
   vim.cmd.edit(out_install)
-  -- Replace BUILD.md hyperlinks with "build/".
-  vim.cmd([[%s!BUILD\.md!build/!g]])
+  -- Replace ./BUILD.md hyperlinks with "/doc/build/".
+  vim.cmd([[%s!./BUILD\.md!/doc/build/!g]])
   vim.cmd([[w]])
 
   local out_build = 'content/doc/build.md'
   sys({ 'hugo', 'new', 'content', '--force', out_build })
   vim.fn.writefile(vim.fn.readfile(joinpath(srcdir, 'BUILD.md')), out_build, 'a')
   vim.cmd.edit(out_build)
-  -- Replace INSTALL.md hyperlinks with "install/".
-  vim.cmd([[%s!INSTALL\.md!install/!g]])
+  -- Replace INSTALL.md hyperlinks with "/doc/install/".
+  vim.cmd([[%s!./INSTALL\.md!/doc/install/!g]])
   vim.cmd([[w]])
 end
 
