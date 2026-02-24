@@ -6,7 +6,7 @@ title = 'Neovim'
   date = [":filename", ":default"]
 
 [permalinks]
-  posts = "/news/:year/:month/"
+  news = "/:section/:year/:month/"
 
 [outputs]
   section = ["html", "rss"]

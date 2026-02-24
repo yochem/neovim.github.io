@@ -32,6 +32,13 @@ just do the following:
 
 Notes:
 
+- Create new blog posts (news items) using the command:
+  ```bash
+  hugo new content content/news/<filename>.md
+  ```
+  The filename won't show up on the site -- the page url will be in the form of
+  `/news/2026/12/` where 2026 is the year and 12 the month, as defined in the
+  front matter.
 - Site search (for `:help` docs) is served by [Algolia Docsearch](https://docsearch.algolia.com/).
     - The javascript and UI container were setup in [this commit](https://github.com/neovim/neovim.github.io/commit/ce9aef12eb1c98135965e3a9c5c792bf9e506a76).
     - The docs pages don't use the layout so they also need to [manually include](https://github.com/neovim/neovim/pull/23839) the javascript and define a UI container.

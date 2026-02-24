@@ -1,7 +1,7 @@
 ---
 title: "Newsletter #2 - Perchance to Dream"
+date: 2014-07-04
 category: newsletter
-permalink: /news/2014/07/
 ---
 
 Welcome to the second monthly newsletter for Neovim, the project that dreams to

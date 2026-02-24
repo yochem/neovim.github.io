@@ -1,7 +1,9 @@
 ---
 title: "Newsletter #4 - Thanksvimming Day"
+date: 2014-11-07
 category: newsletter
-permalink: /news/2014/nov/
+aliases:
+  - /news/2014/nov/
 ---
 
 > The way to "win" at open source is to be consistent and steady.
