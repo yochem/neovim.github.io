@@ -237,6 +237,12 @@ samp {
   color: var(--accent-color);
 }
 
+/* Highlight the currently active menu item */
+.nav-link.active,
+.nav-item.dropdown:has(.dropdown-menu a.active) > .nav-link {
+  color: var(--accent-color) !important;
+}
+
 .navbar-toggler {
   border-width: 0;
   color: var(--fg-color);

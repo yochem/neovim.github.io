@@ -1,6 +1,5 @@
 ---
 title: Vision
-active: About
 layout: mainpage
 ---
 

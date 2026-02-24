@@ -1,6 +1,5 @@
 ---
 title: Screenshots
-active: Screenshots
 layout: mainpage
 ---
 
