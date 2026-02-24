@@ -1,6 +1,5 @@
 ---
 title: Roadmap
-active: About
 layout: mainpage
 ---
 

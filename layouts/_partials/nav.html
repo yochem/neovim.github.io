@@ -1,7 +1,7 @@
 <header class="container">
   <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
-      <a href="/" class="navbar-brand" aria-label="logo">
+      <a href="/" class="navbar-brand" {{ if eq .RelPermalink "/" }}aria-current="page"{{ end }} aria-label="logo">
         {{ partial "logo.svg" . }}
       </a>
 
@@ -18,16 +18,28 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
           {{ range .Site.Menus.main }}
+          {{ $active := strings.Contains $.RelPermalink .URL }}
+
           {{ if .HasChildren }}
 
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"
-              id="neovimDropdown">{{ .Name }}</a>
+            <a
+              class="nav-link dropdown-toggle {{ if $active }}active{{ end }}"
+              {{ if eq $.RelPermalink .URL }}aria-current="page"{{ end }}
+              href="#" role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              id="neovimDropdown"
+            >{{ .Name }}</a>
             <ul class="dropdown-menu" aria-labelledby="neovimDropdown">
               {{ range .Children }}
 
               <li>
-                <a class="dropdown-item" href="{{ .URL }}">
+                <a
+                  class="dropdown-item {{ if eq $.RelPermalink .URL }}active{{ end }}"
+                  {{ if eq $.RelPermalink .URL }}aria-current="page"{{ end }}
+                  href="{{ .URL }}"
+                >
                   {{ .Name }}
                 </a>
               </li>
@@ -37,7 +49,11 @@
           </li>
           {{ else }}
           <li class="nav-item">
-            <a href="{{ .URL }}" class="nav-link">{{ .Name }}</a>
+            <a
+              href="{{ .URL }}"
+              class="nav-link {{ if $active }}active{{ end }}"
+              {{ if eq $.RelPermalink .URL }}aria-current="page"{{ end }}
+            >{{ .Name }}</a>
           </li>
 
           {{ end }} {{ end }}

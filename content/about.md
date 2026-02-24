@@ -1,6 +1,5 @@
 ---
 title: About
-active: About
 layout: mainpage
 ---
 
