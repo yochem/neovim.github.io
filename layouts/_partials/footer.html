@@ -1,6 +1,6 @@
 <footer>
 <div class="container flex">
-{{ if .InSection (site.GetPage "/doc/user") }}
+{{ if eq .Layout "vimdoc" }}
     <div class="generator-stats">
       Generated at {{ now.Format "2006-01-02 15:04" }} from
       <code><a href="https://github.com/neovim/neovim/commit/{{ .Params.commit }}">
