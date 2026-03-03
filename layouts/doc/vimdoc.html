@@ -17,9 +17,10 @@
   </div>
 
   <div class="col-narrow toc">
-    <div><a href="/doc/user/">Main</a></div>
-    <div><a href="/doc/user/vimindex/">Commands index</a></div>
-    <div><a href="/doc/user/quickref/">Quick reference</a></div>
+    <h3>Nvim {{ path.Base (.Parent.Parent.Path) }}</h3>
+    <div><a href='{{ relref . "." }}'>Main</a></div>
+    <div><a href='{{ relref . "vimindex" }}'>Commands index</a></div>
+    <div><a href='{{ relref . "quickref" }}'>Quick reference</a></div>
     <hr />
     {{ $n := 0 }}
     {{ range .Params.headings }}
