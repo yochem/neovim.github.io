@@ -1,12 +1,17 @@
 {{ define "main" }}
 <section class="front-section">
-    <div class="container golden-grid">
-        <div class="col-wide">
-            <h1>{{ .Title }}</h1>
-            {{ .Content }}
-        </div>
-
-        {{ partial "post_sidebar.html" . }}
+  <div class="container golden-grid">
+    <div class="col-wide">
+      <h1>{{ .Title }}</h1>
+      {{ .Content }}
     </div>
+    {{ with .Page.Scratch.Get "aside" }}
+    <div style="padding-left: 2em;">
+      {{ . }}
+    </div>
+    {{ else }}
+    {{ partial "post_sidebar.html" . }}
+    {{ end }}
+  </div>
 </section>
 {{ end }}
